@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-// Generate initial nodes with guaranteed valid positions
+// Generate initial node positions
 const initialNodes = Array.from({ length: 10 }, (_, i) => ({
   id: `node-${i}`,
   // Ensure positions are always defined and within view
@@ -16,7 +16,7 @@ const initialNodes = Array.from({ length: 10 }, (_, i) => ({
   type: "customNode",
 }));
 
-// Generate initial edges with better connection logic
+// Generate initial edges
 const initialEdges = Array.from({ length: 15 }, (_, i) => {
   const source = Math.floor(i / 2);
   const target = (source + 1 + Math.floor(Math.random() * 8)) % 10;
